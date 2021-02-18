@@ -1,0 +1,185 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: auto;
+    height: 100vh;
+    background: url(./images/bg-desktop.png), hsl(229, 57%, 11%);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+span {
+    color: white;
+    font-weight: 700;
+}
+.gib {
+    background-color: hsl(228, 56%, 26%);
+}
+.logo-sec {
+    width: 250px;
+    height: 150px;
+    border-radius: 0 70px 0 0;
+}
+.logo-sec .logo {
+    margin-left: 30px;
+    margin-top: 40px;
+}
+.logo-sec .logo img {
+    width: 90px;
+}
+.logo-sec .icons {
+    margin-top: 15px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.logo-sec .icons .icn-cn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    width: 35px;
+    height: 35px;
+    background-color: hsl(229, 57%, 11%);
+    border-radius: 5px;
+}
+.logo-sec .icons .icn-cn img {
+    width: 15px;
+}
+main > div {
+    display: flex;
+    align-items: flex-end;
+    height: 150px ;
+}
+.usage-sec {
+    position: relative;
+    margin-left: 20px;
+    width: 500px;
+    height: 120px;
+    border-radius: 5px;
+}
+.usage-sec .contain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right:30px ;
+}
+.usage-sec .contain p {
+    color: hsl(229, 7%, 55%);
+    margin-bottom: 15px;
+}
+.usage-sec .contain div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.usage-sec .what-left {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 150px;
+    height: 60px;
+    background-color: white;
+    margin-right: 30px;
+    padding-left:15px ;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: 700;
+    color: hsl(229, 57%, 11%);
+}
+.usage-sec .what-left span {
+    font-size: 12px;
+    padding-top: 5px;
+    padding-left: 10px;
+    color: hsl(229, 7%, 55%);
+}
+.usage-sec .what-left::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 35px;
+    height: 30px;
+    background-color: white;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+progress[value] {
+    width: 100% ;
+    appearance: none;
+    /*firefox*/
+    background-color:hsl(229, 57%, 11%) ;
+    border-radius: 11px;
+    border: none;
+}
+progress[value]::-moz-progress-bar {
+    background-image: linear-gradient(to right,hsl(6, 100%, 80%),hsl(335, 100%, 65%));
+    border: 2px solid hsl(229, 57%, 11%);
+    border-radius: 10px;
+}
+
+/*chrome*/
+progress[value]::-webkit-progress-bar{
+    background-color:hsl(229, 57%, 11%) ;
+    border-radius: 11px;
+}
+progress[value]::-webkit-progress-value {
+    background-image: linear-gradient(to right,hsl(6, 100%, 80%),hsl(335, 100%, 65%));
+    border: 2px solid hsl(229, 57%, 11%);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        background: url(./images/bg-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    main {
+        flex-direction: column;
+    }
+    .logo-sec {
+        width: 80%;
+    }
+    main > div {
+        width: 80%;
+    }
+    .usage-sec {
+        width: 100%;
+        margin-left: 0;
+    }
+    .usage-sec .what-left::after { 
+        display: none;
+    }
+    .usage-sec .what-left {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 90px;
+    }
+}
